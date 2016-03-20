@@ -1,15 +1,9 @@
 body * {
-  outline: 1px solid pink;
+  /*outline: 1px solid pink;*/
 }
 
 svg {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-path {
-  fill: aqua;
-  stroke: none;
-  opacity: 0.5;
 }
