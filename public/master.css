@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  justify-content: center;
+  width: 800px;
+  margin: 0;
+  margin-top: 200px;
+}
+
+path {
+  fill: aqua;
+  stroke: none;
+  opacity: 0.5;
+}
