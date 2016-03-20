@@ -49,7 +49,7 @@ var color5 = [ 'hsl(', baseHue + 150, ',50%, 50%)'].join('')
 var line =
   d3.svg.line()
     // .tension(0) // Catmull–Rom
-    // .interpolate("cardinal-closed")
+    .interpolate("cardinal-closed")
 
 var svg =
   d3.select("body").append("svg")
