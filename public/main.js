@@ -1,35 +1,39 @@
+var width = 800
+var height = 800
+
 var input = QueryString.radius || 50 // Tweak a couple points
+var yFactor = QueryString.yFactor || 4 // Expect a val between 0 and 8
+
+var hUnit = width / 8
+var vUnit = height / 8
 
 var points = [
-  [480, 200],
-  [580, input * 5],
-  [680, 100],
-  [780, 300],
-  [180, 300],
-  [280, 100],
-  [380, input * 5]
+  [hUnit * 4, vUnit * 5],
+  [hUnit * 6, vUnit * 3],
+  [hUnit * 2, vUnit * 3]
 ]
-
-var newPoints = points.map(function(coords) {
-  return coords.map(function(point) {
-    return point * 0.5
-  })
-})
-console.log(newPoints);
+var points2 = [
+  [hUnit * 4, vUnit * 2],
+  [hUnit * 6, vUnit * yFactor],
+  [hUnit * 2, vUnit * yFactor]
+]
 
 var line =
   d3.svg.line()
-    .tension(0) // Catmull–Rom
+    // .tension(0) // Catmull–Rom
     .interpolate("cardinal-closed")
 
 var svg =
   d3.select("body").append("svg")
-    .datum(newPoints)
-    .attr("width", 480)
-    .attr("height", 800)
+    .attr("width", width)
+    .attr("height", height)
 
-svg.append("path")
-   .attr("d", line)
+appendPoints(points)
+appendPoints(points2)
 
-svg.append("path")
-   .attr("d", line)
+function appendPoints(points) {
+  svg.append("g")
+    .datum(points)
+    .append("path")
+    .attr("d", line)
+}
