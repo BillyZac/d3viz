@@ -1,13 +1,19 @@
 var width = 800
 var height = 800
 
-var input = QueryString.radius || 50 // Tweak a couple points
-var yFactor = QueryString.yFactor || 4 // Expect a val between 0 and 8
+var personality = {
+  openness: QueryString.openness || 0,
+  conscientiousness: QueryString.conscientiousness || 0,
+  extraversion: QueryString.extraversion || 0,
+  agreeableness: QueryString.agreeableness || 0,
+  neuroticism: QueryString.neuroticism || 0,
+  emotionality: QueryString.emotionality || 0
+}
+console.log(personality);
 
 var hUnit = width / 8
 var vUnit = height / 8
 var baseHue = getBaseHue()
-console.log(baseHue);
 
 /* Define shapes */
 var points1 = [
@@ -18,7 +24,7 @@ var points1 = [
 var color1 = [ 'hsl(', baseHue, ',50%, 50%)'].join('')
 
 var points2 = [
-  [hUnit * 4, vUnit * yFactor],
+  [hUnit * 4, vUnit * 4],
   [hUnit * 6, vUnit * 4],
   [hUnit * 2, vUnit * 4]
 ]
@@ -32,14 +38,14 @@ var points3 = [
 var color3 = [ 'hsl(', baseHue + 100, ',50%, 50%)'].join('')
 
 var points4 = [
-  [hUnit * 3, vUnit * yFactor],
+  [hUnit * 3, vUnit * 4],
   [hUnit * 1, vUnit * 6],
   [hUnit * 3, vUnit * 7]
 ]
 var color4 = [ 'hsl(', baseHue + 150, ',50%, 50%)'].join('')
 
 var points5 = [
-  [hUnit * 5, vUnit * yFactor],
+  [hUnit * 5, vUnit * 4],
   [hUnit * 7, vUnit * 6],
   [hUnit * 5, vUnit * 7]
 ]
