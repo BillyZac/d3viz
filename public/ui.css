@@ -20,12 +20,10 @@ main div {
 }
 
 .viz {
-  height: 400px;
-  width: 400px;
+  height: 600px;
+  width: 600px;
   background: #333;
   margin: 20px;
-  margin-top: 50px;
-  border-radius: 50%;
 }
 
 input {

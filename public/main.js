@@ -1,5 +1,5 @@
-var width = 400
-var height = 400
+var width = 600
+var height = 600
 
 var personality = {
   openness: QueryString.openness || 0,
@@ -18,9 +18,9 @@ var baseHue = getBaseHue()
 /* Define shapes */
 // The new way
 var shape1 = updatePoints(initializePoints(), personality.emotionality)
-var scaledShape1 = scalePoints(shape1, 100)
+var scaledShape1 = scalePoints(shape1, width/8)
 var shape2 = updatePoints(initializePoints(), personality.openness)
-var scaledShape2 = scalePoints(shape2, 100)
+var scaledShape2 = scalePoints(shape2, width/8)
 
 // The old, more brute way
 var points1 = [
@@ -71,10 +71,10 @@ var svg =
 
 
 /* Execution */
-appendPoints(points1, color1)
-appendPoints(points2, color2)
-appendPoints(points3, color3)
-appendPoints(points4, color4)
-appendPoints(points5, color5)
-// appendPoints(scaledShape1, color5)
-// appendPoints(scaledShape2, color2)
+// appendPoints(points1, color1)
+// appendPoints(points2, color2)
+// appendPoints(points3, color3)
+// appendPoints(points4, color4)
+// appendPoints(points5, color5)
+appendPoints(scaledShape1, color5)
+appendPoints(scaledShape2, color2)
