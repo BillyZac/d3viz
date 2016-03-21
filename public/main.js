@@ -18,42 +18,42 @@ var baseHue = getBaseHue()
 // The new way
 var shapeOpenness = updatePoints({
   points: initializePoints(),
-  pointIndex: 2, // Center point
+  pointsIndicies: [0,4],
   amount: personality.openness
 })
 var scaledShapeOpenness = scalePoints(shapeOpenness, width/8)
 
 var shapeConscientiousness = updatePoints({
   points: initializePoints(),
-  pointIndex: 2, // Center point
+  pointsIndicies: [2], // Center point
   amount: personality.conscientiousness
 })
 var scaledShapeConscientiousness = scalePoints(shapeConscientiousness, width/8)
 
 var shapeExtraversion = updatePoints({
   points: initializePoints(),
-  pointIndex: 2, // Center point
+  pointsIndicies: [2], // Center point
   amount: personality.extraversion
 })
 var scaledShapeExtraversion = scalePoints(shapeExtraversion, width/8)
 
 var shapeAgreeableness = updatePoints({
   points: initializePoints(),
-  pointIndex: 2, // Center point
+  pointsIndicies: [2], // Center point
   amount: personality.agreeableness
 })
 var scaledShapeAgreeableness = scalePoints(shapeAgreeableness, width/8)
 
 var shapeNeuroticism = updatePoints({
   points: initializePoints(),
-  pointIndex: 2, // Center point
+  pointsIndicies: [2], // Center point
   amount: personality.neuroticism
 })
 var scaledShapeNeuroticism = scalePoints(shapeNeuroticism, width/8)
 
 var shapeEmotionality = updatePoints({
   points: initializePoints(),
-  pointIndex: 2, // Center point
+  pointsIndicies: [2], // Center point
   amount: personality.emotionality
 })
 var scaledShapeEmotionality = scalePoints(shapeEmotionality, width/8)
@@ -71,9 +71,9 @@ var svg =
 
 
 /* Execution */
-appendPoints(scaledShapeOpenness, color5)
-appendPoints(scaledShapeConscientiousness, color5)
-appendPoints(scaledShapeExtraversion, color5)
-appendPoints(scaledShapeAgreeableness, color5)
-appendPoints(scaledShapeNeuroticism, color5)
-appendPoints(scaledShapeEmotionality, color5)
+appendPoints(scaledShapeOpenness, 'aqua')
+appendPoints(scaledShapeConscientiousness, 'tomato')
+appendPoints(scaledShapeExtraversion, 'red')
+appendPoints(scaledShapeAgreeableness, 'red')
+appendPoints(scaledShapeNeuroticism, 'red')
+appendPoints(scaledShapeEmotionality, 'red')

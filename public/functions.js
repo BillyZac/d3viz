@@ -23,10 +23,13 @@ function scalePoints(points, factor) {
 // Return a 2D array with the middle point based on "amount"
 function updatePoints(options) {
   var points = options.points
-  var pointIndex = options.pointIndex
+  var pointsIndicies = options.pointsIndicies
   var amount = options.amount
   var delta = (amount - 50) / 50
-  points[pointIndex][1] = points[pointIndex][1] + delta
+
+  pointsIndicies.forEach(function(index) {
+    points[index][1] = points[index][1] + delta
+  })
   return points
 }
 
