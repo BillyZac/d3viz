@@ -16,6 +16,13 @@ var vUnit = height / 8
 var baseHue = getBaseHue()
 
 /* Define shapes */
+// The new way
+var shape1 = updatePoints(initializePoints(), personality.emotionality)
+var scaledShape1 = scalePoints(shape1, 100)
+var shape2 = updatePoints(initializePoints(), personality.openness)
+var scaledShape2 = scalePoints(shape2, 100)
+
+// The old, more brute way
 var points1 = [
   [hUnit * 4, vUnit * 5],
   [hUnit * 6, vUnit * 3],
@@ -55,7 +62,7 @@ var color5 = [ 'hsl(', baseHue + 150, ',50%, 50%)'].join('')
 var line =
   d3.svg.line()
     // .tension(0) // Catmull–Rom
-    .interpolate("cardinal-closed")
+    // .interpolate("cardinal-closed")
 
 var svg =
   d3.select("body").append("svg")
@@ -69,28 +76,5 @@ appendPoints(points2, color2)
 appendPoints(points3, color3)
 appendPoints(points4, color4)
 appendPoints(points5, color5)
-
-
-/* Implementation */
-function appendPoints(points, color) {
-  color = color || 'aqua'
-  svg.append("g")
-    .datum(points)
-    .append("path")
-    .attr("d", line)
-    .style({
-      "fill": color,
-      'opacity': 0.5
-    })
-}
-
-function getBaseHue() {
-  var baseHue = 0 // Default value
-  var emotionality = QueryString.emotionality
-  if (emotionality >= 0 && emotionality <= 100) {
-    baseHue = emotionality * 3.6 // Scale for hsl hue, which is 0 - 360
-    return baseHue
-  }
-  // Return default value if emotionality param is not valid
-  return baseHue
-}
+appendPoints(scaledShape1, color5)
+appendPoints(scaledShape2, color2)
