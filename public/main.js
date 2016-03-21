@@ -1,5 +1,5 @@
-var width = 800
-var height = 800
+var width = 400
+var height = 400
 
 var personality = {
   openness: QueryString.openness || 0,
@@ -65,7 +65,7 @@ var line =
     // .interpolate("cardinal-closed")
 
 var svg =
-  d3.select("body").append("svg")
+  d3.select(".viz").append("svg")
     .attr("width", width)
     .attr("height", height)
 
@@ -76,5 +76,5 @@ appendPoints(points2, color2)
 appendPoints(points3, color3)
 appendPoints(points4, color4)
 appendPoints(points5, color5)
-appendPoints(scaledShape1, color5)
-appendPoints(scaledShape2, color2)
+// appendPoints(scaledShape1, color5)
+// appendPoints(scaledShape2, color2)
