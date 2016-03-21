@@ -9,7 +9,6 @@ var personality = {
   neuroticism: QueryString.neuroticism || 0,
   emotionality: QueryString.emotionality || 0
 }
-console.log(personality);
 
 var hUnit = width / 8
 var vUnit = height / 8
@@ -17,46 +16,47 @@ var baseHue = getBaseHue()
 
 /* Define shapes */
 // The new way
-var shape1 = updatePoints(initializePoints(), personality.emotionality)
-var scaledShape1 = scalePoints(shape1, width/8)
-var shape2 = updatePoints(initializePoints(), personality.openness)
-var scaledShape2 = scalePoints(shape2, width/8)
+var shapeOpenness = updatePoints({
+  points: initializePoints(),
+  pointIndex: 2, // Center point
+  amount: personality.openness
+})
+var scaledShapeOpenness = scalePoints(shapeOpenness, width/8)
 
-// The old, more brute way
-var points1 = [
-  [hUnit * 4, vUnit * 5],
-  [hUnit * 6, vUnit * 3],
-  [hUnit * 2, vUnit * 3]
-]
-var color1 = [ 'hsl(', baseHue, ',50%, 50%)'].join('')
+var shapeConscientiousness = updatePoints({
+  points: initializePoints(),
+  pointIndex: 2, // Center point
+  amount: personality.conscientiousness
+})
+var scaledShapeConscientiousness = scalePoints(shapeConscientiousness, width/8)
 
-var points2 = [
-  [hUnit * 4, vUnit * 4],
-  [hUnit * 6, vUnit * 4],
-  [hUnit * 2, vUnit * 4]
-]
-var color2 = [ 'hsl(', baseHue + 50, ',50%, 50%)'].join('')
+var shapeExtraversion = updatePoints({
+  points: initializePoints(),
+  pointIndex: 2, // Center point
+  amount: personality.extraversion
+})
+var scaledShapeExtraversion = scalePoints(shapeExtraversion, width/8)
 
-var points3 = [
-  [hUnit * 4, vUnit * 7],
-  [hUnit * 6, vUnit * 3],
-  [hUnit * 2, vUnit * 3]
-]
-var color3 = [ 'hsl(', baseHue + 100, ',50%, 50%)'].join('')
+var shapeAgreeableness = updatePoints({
+  points: initializePoints(),
+  pointIndex: 2, // Center point
+  amount: personality.agreeableness
+})
+var scaledShapeAgreeableness = scalePoints(shapeAgreeableness, width/8)
 
-var points4 = [
-  [hUnit * 3, vUnit * 4],
-  [hUnit * 1, vUnit * 6],
-  [hUnit * 3, vUnit * 7]
-]
-var color4 = [ 'hsl(', baseHue + 150, ',50%, 50%)'].join('')
+var shapeNeuroticism = updatePoints({
+  points: initializePoints(),
+  pointIndex: 2, // Center point
+  amount: personality.neuroticism
+})
+var scaledShapeNeuroticism = scalePoints(shapeNeuroticism, width/8)
 
-var points5 = [
-  [hUnit * 5, vUnit * 4],
-  [hUnit * 7, vUnit * 6],
-  [hUnit * 5, vUnit * 7]
-]
-var color5 = [ 'hsl(', baseHue + 150, ',50%, 50%)'].join('')
+var shapeEmotionality = updatePoints({
+  points: initializePoints(),
+  pointIndex: 2, // Center point
+  amount: personality.emotionality
+})
+var scaledShapeEmotionality = scalePoints(shapeEmotionality, width/8)
 
 /* Define line function and setup svg */
 var line =
@@ -71,10 +71,9 @@ var svg =
 
 
 /* Execution */
-// appendPoints(points1, color1)
-// appendPoints(points2, color2)
-// appendPoints(points3, color3)
-// appendPoints(points4, color4)
-// appendPoints(points5, color5)
-appendPoints(scaledShape1, color5)
-appendPoints(scaledShape2, color2)
+appendPoints(scaledShapeOpenness, color5)
+appendPoints(scaledShapeConscientiousness, color5)
+appendPoints(scaledShapeExtraversion, color5)
+appendPoints(scaledShapeAgreeableness, color5)
+appendPoints(scaledShapeNeuroticism, color5)
+appendPoints(scaledShapeEmotionality, color5)

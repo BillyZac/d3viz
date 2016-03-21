@@ -21,9 +21,12 @@ function scalePoints(points, factor) {
 
 // Take a 2D points array
 // Return a 2D array with the middle point based on "amount"
-function updatePoints(points, amount) {
+function updatePoints(options) {
+  var points = options.points
+  var pointIndex = options.pointIndex
+  var amount = options.amount
   var delta = (amount - 50) / 50
-  points[2][1] = points[2][1] + delta
+  points[pointIndex][1] = points[pointIndex][1] + delta
   return points
 }
 
