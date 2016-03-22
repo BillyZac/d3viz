@@ -1,10 +1,15 @@
 var circlePoints = []
 
-function x(t) {
-  return Math.cos(t)
+function x(params) {
+  if (params.xAxis === 'undefined')
+    params.xAxis = 1
+  return params.xAxis * Math.cos(params.t)
 }
-function y(t) {
-  return Math.sin(t)
+
+function y(params) {
+  if (params.yAxis === 'undefined')
+    params.yAxis = 1
+  return params.yAxis * Math.sin(params.t)
 }
 
 function degreesToTheta(valueInDegrees) {
@@ -12,9 +17,17 @@ function degreesToTheta(valueInDegrees) {
 }
 
 for (var i = 0; i < 360; i++ ) {
+  var xParams = {
+    t: degreesToTheta(i),
+    xAxis: width
+  }
+  var yParams = {
+    t: degreesToTheta(i),
+    yAxis: height
+  }
   var theta = degreesToTheta(i)
-  var xPosition = x(theta) * width
-  var yPosition = y(theta) * height
+  var xPosition = x(xParams)
+  var yPosition = y(yParams)
 
   if ((i % 45) === 0) {
     circlePoints.push([xPosition, yPosition])
