@@ -1,6 +1,3 @@
-var width = 600
-var height = 600
-
 var personality = {
   openness: QueryString.openness || 0,
   conscientiousness: QueryString.conscientiousness || 0,

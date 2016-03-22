@@ -16,7 +16,6 @@ function shape(personality, key) {
       k: 2
     }
     var point = [xCoordinate(xParams), yCoordinate(yParams)]
-    console.log(thetaDegrees, point);
     points.push(point)
   }
   return points
@@ -35,5 +34,3 @@ function yCoordinate(_) {
 function degreesToRadians(valueInDegrees) {
   return valueInDegrees / degreesInACircle * 2 * PI
 }
-
-shape(null)
