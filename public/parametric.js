@@ -1,37 +1,39 @@
-var circlePoints = []
+var degreesInACircle = 360
+var PI = Math.PI
 
-function x(params) {
-  if (params.xAxis === 'undefined')
-    params.xAxis = 1
-  return params.xAxis * Math.cos(params.t)
-}
-
-function y(params) {
-  if (params.yAxis === 'undefined')
-    params.yAxis = 1
-  return params.yAxis * Math.sin(params.t)
-}
-
-function degreesToTheta(valueInDegrees) {
-  return valueInDegrees / 360 * 2 * Math.PI
-}
-
-for (var i = 0; i < 360; i++ ) {
-  var xParams = {
-    t: degreesToTheta(i),
-    xAxis: width
+function shape(personality) {
+  var points = []
+  var step = 15 // Degree to step forward for each point
+  for (var thetaDegrees = 0; thetaDegrees <= 360; thetaDegrees += step) {
+    var xParams = {
+      t: degreesToRadians(thetaDegrees),
+      radius: width/3,
+      k: personality
+    }
+    var yParams = {
+      t: degreesToRadians(thetaDegrees),
+      radius: height/3,
+      k: 2
+    }
+    var point = [xCoordinate(xParams), yCoordinate(yParams)]
+    console.log(thetaDegrees, point);
+    points.push(point)
   }
-  var yParams = {
-    t: degreesToTheta(i),
-    yAxis: height
-  }
-  var theta = degreesToTheta(i)
-  var xPosition = x(xParams)
-  var yPosition = y(yParams)
-
-  if ((i % 45) === 0) {
-    circlePoints.push([xPosition, yPosition])
-  }
+  return points
 }
 
-console.log(circlePoints);
+/////////
+
+function xCoordinate(_) {
+  return _.radius * Math.cos(_.k * _.t)
+}
+
+function yCoordinate(_) {
+  return _.radius * Math.sin(_.k * _.t)
+}
+
+function degreesToRadians(valueInDegrees) {
+  return valueInDegrees / degreesInACircle * 2 * PI
+}
+
+shape(null)

@@ -58,6 +58,10 @@ var shapeEmotionality = updatePoints({
 })
 var scaledShapeEmotionality = scalePoints(shapeEmotionality, width/8)
 
+
+//////////
+var shape1 = shape(3)
+
 /* Define line function and setup svg */
 var line =
   d3.svg.line()
@@ -69,11 +73,14 @@ var svg =
     .attr("width", width)
     .attr("height", height)
 
-
-/* Execution */
-appendPoints(scaledShapeOpenness, 'aqua')
-appendPoints(scaledShapeConscientiousness, 'tomato')
-appendPoints(scaledShapeExtraversion, 'red')
-appendPoints(scaledShapeAgreeableness, 'red')
-appendPoints(scaledShapeNeuroticism, 'red')
-appendPoints(scaledShapeEmotionality, 'red')
+svg.append("g")
+  .datum(shape1)
+  .append("path")
+  .attr("d", line)
+  .attr("transform", "translate(300, 300)")
+  .style({
+    "fill": 'aqua',
+    'stroke': 'tomato',
+    'stroke-width': '3px',
+    'opacity': 0.5
+  })
