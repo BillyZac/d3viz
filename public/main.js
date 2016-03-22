@@ -17,15 +17,15 @@ var baseHue = getBaseHue()
 /* Define shapes */
 // The new way
 var shapeOpenness = updatePoints({
-  points: initializePoints(),
-  pointsIndicies: [0,4],
+  points: initializePoints('A'),
+  pointsIndicies: [], // Two outer points
   amount: personality.openness
 })
 var scaledShapeOpenness = scalePoints(shapeOpenness, width/8)
 
 var shapeConscientiousness = updatePoints({
   points: initializePoints(),
-  pointsIndicies: [2], // Center point
+  pointsIndicies: [1, 3], // Second from out points
   amount: personality.conscientiousness
 })
 var scaledShapeConscientiousness = scalePoints(shapeConscientiousness, width/8)

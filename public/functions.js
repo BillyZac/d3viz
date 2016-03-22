@@ -1,13 +1,22 @@
 /* Implementation */
 
-function initializePoints() {
-  points = [
+function initializePoints(option) {
+  var points = [
     [2, 4],
     [2, 6],
     [4, 1],
     [6, 6],
     [6, 4]
   ]
+  if (option === 'A') {
+    points = [
+      [2, 2],
+      [1, 7],
+      [4, 3],
+      [7, 7],
+      [6, 2]
+    ]
+  }
   return points
 }
 
