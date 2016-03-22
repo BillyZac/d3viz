@@ -15,14 +15,12 @@ main{
 }
 
 main div {
-  /*background: #222;*/
   color: #333;
 }
 
 .viz {
   height: 600px;
   width: 600px;
-  /*background: #333;*/
   margin: 20px;
 }
 
