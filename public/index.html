@@ -3,12 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Moody Meeks</title>
-    <link rel="stylesheet" href="/home.css" media="screen" title="no title" charset="utf-8">
+    <!-- <link rel="stylesheet" href="/master.css" media="screen" title="no title" charset="utf-8"> -->
+    <link rel="stylesheet" href="/ui.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <div class="viz"></div>
+    <main>
+      <div>
+        <h1 id="usernameDisplayed">@billyzacsmith</h1>
+        <div class="viz"></div>
+      </div>
+      <input id="username" placeholder="Twitter username"></input>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js" type="text/javascript"></script>
+    <script src="/ui.js" type="text/javascript"></script>
     <script src="/query-string.js" type="text/javascript"></script>
     <script src="/functions.js" type="text/javascript"></script>
     <script src="/parametric.js" type="text/javascript"></script>
