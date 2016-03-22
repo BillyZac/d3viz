@@ -60,7 +60,10 @@ var scaledShapeEmotionality = scalePoints(shapeEmotionality, width/8)
 
 
 //////////
-var shape1 = shape(3)
+var shape1 = shape(personality, 'emotionality')
+var shape2 = shape(personality, 'extraversion')
+var shape3 = shape(personality, 'conscientiousness')
+
 
 /* Define line function and setup svg */
 var line =
@@ -80,7 +83,27 @@ svg.append("g")
   .attr("transform", "translate(300, 300)")
   .style({
     "fill": 'aqua',
+    'opacity': 0.5
+  })
+
+svg.append("g")
+  .datum(shape2)
+  .append("path")
+  .attr("d", line)
+  .attr("transform", "translate(300, 300)")
+  .style({
+    "fill": 'no-fill',
     'stroke': 'tomato',
     'stroke-width': '3px',
+    'opacity': 0.5
+  })
+
+svg.append("g")
+  .datum(shape3)
+  .append("path")
+  .attr("d", line)
+  .attr("transform", "translate(300, 300)")
+  .style({
+    "fill": 'tomato',
     'opacity': 0.5
   })

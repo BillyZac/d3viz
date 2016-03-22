@@ -1,14 +1,14 @@
 var degreesInACircle = 360
 var PI = Math.PI
 
-function shape(personality) {
+function shape(personality, key) {
   var points = []
   var step = 15 // Degree to step forward for each point
   for (var thetaDegrees = 0; thetaDegrees <= 360; thetaDegrees += step) {
     var xParams = {
       t: degreesToRadians(thetaDegrees),
       radius: width/3,
-      k: personality
+      k: personality[key] / 10 + 1
     }
     var yParams = {
       t: degreesToRadians(thetaDegrees),
