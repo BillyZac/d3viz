@@ -17,3 +17,12 @@
   width: 100%;
   background: #444;
 }
+
+path {
+  opacity: 0.3;
+  transition: 0.3s ease;
+}
+
+path:hover {
+  opacity: 0.8;
+}
