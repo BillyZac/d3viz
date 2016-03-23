@@ -1,0 +1,19 @@
+.viz {
+  position: relative;
+  background: url(paper.png);
+  border-radius: 10px;
+}
+
+.usernameDisplayed {
+  color: #ddd;
+  margin: 10px;
+}
+
+.usernameContainer {
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #444;
+}

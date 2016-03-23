@@ -14,9 +14,7 @@ main{
   align-items: center;
 }
 
-main div {
-  color: #333;
-}
+
 
 .viz {
   height: 600px;
