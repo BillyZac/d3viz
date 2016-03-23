@@ -1,8 +1,32 @@
 .viz {
   position: relative;
-  background: url(paper.png);
+  overflow: hidden;
   border-radius: 10px;
+  background: url(paper.png) 0 0 repeat;
 }
+
+/*
+.spinner {
+	content: "";
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	top: 0;
+	left: 0;
+  background: url(background.svg) 0 0 repeat;
+  transform: rotate(45deg);
+  animation: spin 1s ease-out 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  },
+  100% {
+    transform: rotate(360deg);
+  }
+}
+*/
 
 .usernameDisplayed {
   color: #ddd;
