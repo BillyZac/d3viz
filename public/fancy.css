@@ -7,6 +7,8 @@
 .usernameDisplayed {
   color: #ddd;
   margin: 10px;
+  letter-spacing: 0.05rem;
+  font-weight: 200;
 }
 
 .usernameContainer {
@@ -25,4 +27,18 @@ path {
 
 path:hover {
   opacity: 0.8;
+}
+
+.title {
+  color: #555;
+  text-transform: lowercase;
+  font-size: 3rem;
+}
+.title span:nth-child(2) {
+  color: #fff;
+  background: tomato;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-left: 3px;
+  text-transform: uppercase;
 }
