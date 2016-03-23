@@ -35,12 +35,12 @@ function get(url) {
       //   emotionality: getEmotionality(watsonPersonality) // Special case -- nested under Openness
       // }
       var personality = {
-        openness: 20,
-        conscientiousness: 20,
-        extraversion: 20,
-        agreeableness: 20,
-        neuroticism: 20,
-        emotionality: 20
+        openness: 46,
+        conscientiousness: 23,
+        extraversion: 78,
+        agreeableness: 55,
+        neuroticism: 89,
+        emotionality: 88
       }
       window.location.search = getUrlParams(personality)
     } else {
