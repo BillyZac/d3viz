@@ -59,7 +59,7 @@ path:hover {
 }
 .title span:nth-child(2) {
   color: #fff;
-  background: tomato;
+  background: #555;
   padding-left: 7px;
   padding-right: 7px;
   margin-left: 3px;

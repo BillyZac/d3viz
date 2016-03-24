@@ -79,7 +79,12 @@ svg.append("g")
   .attr("d", line)
   .attr("transform", "translate(300, 300)")
   .style({
-    "fill": 'aqua',
+    "fill":
+      [
+        'hsl(',
+        baseHue,
+        ', 60%, 60%)'
+      ].join(''),
     "opacity": 0.5
   })
 
@@ -90,8 +95,8 @@ svg.append("g")
   .attr("transform", "translate(300, 300)")
   .style({
     "fill": 'no-fill',
-    'stroke': 'tomato',
-    'stroke-width': '3px',
+    'stroke': 'white',
+    'stroke-width': '5px',
     'opacity': 0.5
   })
 
@@ -101,6 +106,10 @@ svg.append("g")
   .attr("d", line)
   .attr("transform", "translate(300, 300)")
   .style({
-    "fill": 'tomato',
+    "fill": [
+      'hsl(',
+      baseHue + 60, 
+      ', 60%, 60%)'
+    ].join(''),
     'opacity': 0.5
   })
