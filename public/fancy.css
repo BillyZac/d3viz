@@ -1,6 +1,5 @@
 .viz {
   position: relative;
-  overflow: hidden;
   border-radius: 10px;
   background: url(paper.png) 0 0 repeat;
 }

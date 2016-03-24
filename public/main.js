@@ -79,7 +79,8 @@ svg.append("g")
   .attr("d", line)
   .attr("transform", "translate(300, 300)")
   .style({
-    "fill": 'aqua'
+    "fill": 'aqua',
+    "opacity": 0.5
   })
 
 svg.append("g")
